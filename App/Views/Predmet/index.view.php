@@ -54,7 +54,7 @@ use App\Models\Predmet;
                                 <?php } ?>
                                 <p></p>
                                 <p align="center">
-                                    <a href="?c=predmet&a=edit&id=<?= $predmet->getId() ?>" class="btn btn-success">Otvoriť</a>
+                                    <a href="?c=predmet&a=open&id=<?= $predmet->getId() ?>" class="btn btn-success">Otvoriť</a>
                                     <a href="?c=predmet&a=edit&id=<?= $predmet->getId() ?>" class="btn btn-warning">Upraviť</a>
                                     <a href="?c=predmet&a=delete&id=<?= $predmet->getId() ?>" class="btn btn-danger">Zmazať</a>
                                 </p>

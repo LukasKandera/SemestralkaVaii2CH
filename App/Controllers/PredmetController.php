@@ -62,6 +62,19 @@ class PredmetController extends AControllerBase
             'predmet.form'
         );
     }
+
+    /**
+     * @return \App\Core\Responses\ViewResponse
+     */
+    public function open()
+    {
+        return $this->html([
+            'predmet' => Predmet::getOne($this->request()->getValue('id'))
+        ],
+            'predmet.open'
+        );
+    }
+
     /**
      * @return \App\Core\Responses\RedirectResponse
      * @throws \Exception

@@ -12,6 +12,13 @@ body {
   text-align: center;
   font-size: 35px;
 }
+.header.main {
+  background-image: url("/public/img/headerMain.png");
+  padding: 20px;
+  text-align: center;
+  color: goldenrod;
+  font-size: 35px;
+}
 /*.header {
 		  background-color: goldenrod;
 		  padding: 20px;
