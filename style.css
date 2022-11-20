@@ -7,7 +7,7 @@ body {
 }
 
 .header {
-  background-color: seagreen;
+  background-image: url("/public/img/header.jpg");
   padding: 20px;
   text-align: center;
   font-size: 35px;
@@ -67,8 +67,8 @@ p.citacia {
 }
 h1.NadpisThema {
  	color: darkgreen;
-	font-size: 30px;
-	padding: 15px;
+	font-size: 40px;
+    padding: 15px;
 
 }
 h2.NadpisKTextu {
