@@ -92,6 +92,10 @@ class Predmet extends Model
         $this->text = $text;
     }
 
+    /**
+     * @return void
+     * @throws \Exception
+     */
     public function delete()
     {
         Model::getConnection()->beginTransaction();
