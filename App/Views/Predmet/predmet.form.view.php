@@ -14,15 +14,15 @@ $predmet = $data['predmet'];
                 <input type="hidden" value="<?= $predmet->getId() ?>" name="id">
                 <div class="mb-3">
                     <label for="nadpis" class="form-label">Názov:</label>
-                    <input type="text" class="form-control" id="nadpis" name="nadpis" aria-describedby="nadpis" value="<?= $predmet->getNadpis() ?>">
+                    <input type="text" class="form-control" id="nadpis" name="nadpis" aria-describedby="nadpis" value="<?= $predmet->getNadpis() ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="druh" class="form-label">Druh:</label>
-                    <input type="text" class="form-control" id="druh" name="druh" aria-describedby="druh" value="<?= $predmet->getDruh() ?>">
+                    <input type="text" class="form-control" id="druh" name="druh" aria-describedby="druh" value="<?= $predmet->getDruh() ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="text">Obsah:</label>
-                    <textarea class="form-control" id="text" name="text" style="height: 100px"><?= $predmet->getText() ?></textarea>
+                    <textarea class="form-control" id="text" name="text" style="height: 100px"required><?= $predmet->getText() ?></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Obrázok:</label>

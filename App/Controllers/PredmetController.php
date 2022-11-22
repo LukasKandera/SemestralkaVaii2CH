@@ -89,8 +89,9 @@ class PredmetController extends AControllerBase
         $predmet->setText($this->request()->getValue("text"));
         $predmet->setImage($this->processUploadedFile($predmet));
         if (!is_null($oldImage) && is_null($predmet->getImage())) {
-            unlink($oldImage);
+            $predmet->setImage($oldImage);
         }
+
         $predmet->save();
 
         return $this->redirect("?c=predmet");
@@ -102,9 +103,9 @@ class PredmetController extends AControllerBase
      */
     private function processUploadedFile(Predmet $predmet)
     {
-        $image = $this->request()->getFiles()['image'];
+        $image = $this->request()->getFiles()["image"];
         if (!is_null($image) && $image['error'] == UPLOAD_ERR_OK) {
-            $targetFile = "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . time() . $image['name'];
+            $targetFile = "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . time() . $image["name"];
             if (move_uploaded_file($image["tmp_name"], $targetFile)) {
                 if ($predmet->getId() && $predmet->getImage()) {
                     unlink($predmet->getImage());
