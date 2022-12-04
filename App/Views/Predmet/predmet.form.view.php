@@ -1,6 +1,8 @@
 <?php
 /** @var Array $data */
 /** @var IAuthenticator $auth */
+
+use App\Core\IAuthenticator;
 use App\Models\Predmet;
 
 /** @var Predmet $predmet */

@@ -1,11 +1,10 @@
-
 <?php
 /** @var Array $data */
 /** @var IAuthenticator $auth */
-/** @var Predmet $predmet */
+/** @var Character $character */
 
 use App\Core\IAuthenticator;
-use App\Models\Predmet;
+use App\Models\Character;
 
 ?>
 
@@ -35,28 +34,28 @@ use App\Models\Predmet;
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <a href="?c=predmet&a=create" class="btn btn-success">Pridať nový predmet</a>
+                    <a href="?c=character&a=create" class="btn btn-success">Pridať novú postavu</a>
                 </div>
             </div>
             <div class="row">
-                <?php foreach ($data['data'] as $predmet) { ?>
+                <?php foreach ($data['data'] as $character) { ?>
                     <div class="col-xl-4 col-md-4 col-sm-6">
                         <div class="card my-3">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <?= $predmet->getNadpis() ?>
+                                    <?= $character->getMeno() ?>
                                 </h5>
 
-                                <?php if ($predmet->getImage()) { ?>
-                                    <img src="<?= $predmet->getImage() ?>" class="card-img-top" alt="...">
+                                <?php if ($character->getObrazok()) { ?>
+                                    <img src="<?= $character->getObrazok() ?>" class="card-img-top" alt="...">
                                 <?php } else {?>
                                     <img src="<?= "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "itemDef.png" ?>" class="card-img-top" alt="...">
                                 <?php } ?>
                                 <p></p>
                                 <p align="center">
-                                    <a href="?c=predmet&a=open&id=<?= $predmet->getId() ?>" class="btn btn-success">Otvoriť</a>
-                                    <a href="?c=predmet&a=edit&id=<?= $predmet->getId() ?>" class="btn btn-warning">Upraviť</a>
-                                    <a href="?c=predmet&a=delete&id=<?= $predmet->getId() ?>" class="btn btn-danger">Zmazať</a>
+                                    <a href="?c=predmet&a=open&id=<?= $character->getId() ?>" class="btn btn-success">Otvoriť</a>
+                                    <a href="?c=predmet&a=edit&id=<?= $character->getId() ?>" class="btn btn-warning">Upraviť</a>
+                                    <a href="?c=predmet&a=delete&id=<?= $character->getId() ?>" class="btn btn-danger">Zmazať</a>
                                 </p>
                             </div>
                         </div>
