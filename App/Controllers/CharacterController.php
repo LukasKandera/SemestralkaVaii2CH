@@ -89,7 +89,7 @@ class CharacterController extends AControllerBase
         $character->setTyp($this->request()->getValue("typ"));
         $character->setPopis($this->request()->getValue("popis"));
         $character->setPovaha($this->request()->getValue("povaha"));
-        $character->setHlas($this->request()->getValue("hlas"));
+        $character->setHistoria($this->request()->getValue("historia"));
         $character->setMotivacia($this->request()->getValue("motivacia"));
         $character->setIdealy($this->request()->getValue("idealy"));
         $character->setPovolanieCech($this->request()->getValue("povolanieCech"));
@@ -123,6 +123,7 @@ class CharacterController extends AControllerBase
             }
         }
         return null;*/
+
     }
 
 }

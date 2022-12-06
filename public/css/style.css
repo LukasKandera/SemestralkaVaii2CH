@@ -14,19 +14,10 @@ body {
 }
 .headermain {
   background-image:url("/public/img/headerMain.png");
-  /*background-image: url("/public/img/headerMain.png");*/
-  padding: 20px;
+  padding: 50px;
   text-align: center;
-  color: goldenrod;
-  font-size: 35px;
 }
-/*.header {
-		  background-color: goldenrod;
-		  padding: 20px;
-		  text-align: center;
-		  font-size: 35px;
-		}
-*/
+
 .row {
   display: -webkit-flex;
   display: flex;
@@ -71,6 +62,12 @@ div.citacia {
 p.citacia {
   font-style: italic;
   padding: 10px;
+
+}
+h1.NadpisHeaderMain {
+  color: goldenrod;
+  font-size: 80px;
+  padding: 20px;
 
 }
 h1.NadpisThema {

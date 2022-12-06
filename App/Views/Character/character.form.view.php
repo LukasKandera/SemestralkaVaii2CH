@@ -8,7 +8,7 @@ use App\Core\IAuthenticator;
 use App\Models\Character;
 
 /** @var Character $character */
-$predmet = $data['character'];
+$character = $data['character'];
 ?>
 <div class="container">
     <div class="row>">

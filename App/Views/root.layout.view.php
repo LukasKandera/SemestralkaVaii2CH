@@ -14,14 +14,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="public/css/styl.css">
-    <script src="public/js/script.js"></script>
+    <link rel="stylesheet" href="../../public/css/styl.css">
+    <script src="../../public/js/script.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="?c=home">
-            <img src="public/images/vaiicko_logo.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
+            <img src="../../public/img/d20.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
                  title="<?= \App\Config\Configuration::APP_NAME ?>">
         </a>
         <ul class="navbar-nav me-auto">
@@ -43,6 +43,10 @@
                 </li>
             </ul>
         <?php } ?>
+        <a class="navbar-brand" href="?c=home">
+            <img src="../../public/img/user.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
+                 title="<?= \App\Config\Configuration::APP_NAME ?>">
+        </a>
     </div>
 </nav>
 <div class="container-fluid mt-3">

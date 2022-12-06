@@ -1,5 +1,5 @@
 let imageIndex = 1;
-let imageSource = ['','url("../public/img/headerMain.png")','url("../public/img/headerMain1.png")','url("../public/img/headerMain2.jpg")'];
+let imageSource = ['','url("../public/img/headerMain.png")','url("../public/img/headerMain1.jpg")','url("../public/img/headerMain2.jpg")','url("../public/img/headerMain3.jpg")'];
 function initialize() {
     changeBI();
 }

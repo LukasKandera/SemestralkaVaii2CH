@@ -17,7 +17,23 @@ class Character extends Model
     protected string $idealy = "";
     protected string $povolanieCech = "";
     protected string $hlas = "";
-    protected string $obrazok = "";
+    protected ?string $obrazok = "";
+
+    /**
+     * @return string|null
+     */
+    public function getObrazok(): ?string
+    {
+        return $this->obrazok;
+    }
+
+    /**
+     * @param string|null $obrazok
+     */
+    public function setObrazok(?string $obrazok): void
+    {
+        $this->obrazok = $obrazok;
+    }
     protected int $autor = 0;
 
     /**
@@ -196,21 +212,7 @@ class Character extends Model
         $this->hlas = $hlas;
     }
 
-    /**
-     * @return string
-     */
-    public function getObrazok(): string
-    {
-        return $this->obrazok;
-    }
 
-    /**
-     * @param string $obrazok
-     */
-    public function setObrazok(string $obrazok): void
-    {
-        $this->obrazok = $obrazok;
-    }
 
     /**
      * @return int

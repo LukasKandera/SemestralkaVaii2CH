@@ -11,19 +11,19 @@ use App\Models\Predmet;
 
 <head>
     <meta charset="UTF-8">
-    <title>Nehráčske postavy</title>
+    <title>Predmety</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../../public/css/style.css">
 </head>
 <body>
-<div class="header" >
+<div class="header row" >
     <h1>Predmety</h1>
 </div>
 
 <div class="row">
     <div class="column side">
         <ul>
-            <li><a href="../HlavnaStranka.html">Hlavná stránka</a></li>
+            <li><a href="index.php">Hlavná stránka</a></li>
             <li><a href="?c=predmet">Predmety</a></li>
             <li><a href="?c=character">Nehráčské postavy</a></li>
             <li><a href="Mapy.html">Mapy</a></li>
