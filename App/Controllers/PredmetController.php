@@ -103,10 +103,11 @@ class PredmetController extends AControllerBase
      */
     private function processUploadedFile(Predmet $predmet)
     {
-        $image = $this->request()->getFiles();
+        $image = $this->request()->getFiles()["image"];
         if (!is_null($image) && $image['error'] == UPLOAD_ERR_OK) {
-            $targetFile = "D:". DIRECTORY_SEPARATOR ."škola". DIRECTORY_SEPARATOR ."sem 7". DIRECTORY_SEPARATOR ."php". DIRECTORY_SEPARATOR ."phpSemestralkaVAII". DIRECTORY_SEPARATOR ."php_mysql_home_2022". DIRECTORY_SEPARATOR ."php_mysql". DIRECTORY_SEPARATOR ."www". DIRECTORY_SEPARATOR ."public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . time() . $image["image"]["name"];
-            if (move_uploaded_file($image["image"]["tmp_name"], $targetFile)) {
+            $name = time() . $image["name"];
+            $targetFile = "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . $name;
+            if (move_uploaded_file($image["tmp_name"], $targetFile)) {
                 if ($predmet->getId() && $predmet->getImage()) {
                     unlink($predmet->getImage());
                 }

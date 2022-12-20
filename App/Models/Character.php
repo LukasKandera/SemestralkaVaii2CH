@@ -18,6 +18,7 @@ class Character extends Model
     protected string $povolanieCech = "";
     protected string $hlas = "";
     protected ?string $obrazok = "";
+    protected int $autor = 1;
 
     /**
      * @return string|null
@@ -34,7 +35,6 @@ class Character extends Model
     {
         $this->obrazok = $obrazok;
     }
-    protected int $autor = 0;
 
     /**
      * @return int

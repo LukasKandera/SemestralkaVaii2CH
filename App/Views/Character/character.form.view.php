@@ -14,7 +14,7 @@ $character = $data['character'];
     <div class="row>">
         <div class="col">
             <h3>Editácia/pridanie postavy</h3>
-            <form action="?c=character&a=store" method="post">
+            <form action="?c=character&a=store" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="<?= $character->getId() ?>" name="id">
                 <div class="mb-3">
                     <label for="meno" class="form-label">Meno postavy:</label>

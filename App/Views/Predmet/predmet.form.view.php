@@ -12,7 +12,7 @@ $predmet = $data['predmet'];
     <div class="row>">
         <div class="col">
             <h3>Editácia/pridanie príspevku</h3>
-            <form action="?c=predmet&a=store" method="post">
+            <form action="?c=predmet&a=store" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="<?= $predmet->getId() ?>" name="id">
                 <div class="mb-3">
                     <label for="nadpis" class="form-label">Názov:</label>
