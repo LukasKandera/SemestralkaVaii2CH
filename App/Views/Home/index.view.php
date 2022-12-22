@@ -15,8 +15,8 @@
             <li><a href="/index.php">Hlavná stránka</a></li>
             <li><a href="/index.php?c=predmet">Predmety</a></li>
             <li><a href="/index.php?c=character">Nehráčské postavy</a></li>
-            <li><a href="podpriecinok/Mapy.html">Mapy</a></li>
-            <li><a href="podpriecinok/rozbockaAutori.html">Autorská rubrika</a></li>
+            <li><a href="?c=map">Mapy</a></li>
+            <li><a href="?c=scroll">Autorská rubrika</a></li>
         </ul>
     </div>
     <div class="column middle">

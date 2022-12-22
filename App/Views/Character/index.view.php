@@ -25,8 +25,8 @@ use App\Models\Character;
             <li><a href="/index.php">Hlavná stránka</a></li>
             <li><a href="?c=predmet">Predmety</a></li>
             <li><a href="?c=character">Nehráčské postavy</a></li>
-            <li><a href="Mapy.html">Mapy</a></li>
-            <li><a href="rozbockaAutori.html">Autorská rubrika</a></li>
+            <li><a href="?c=map">Mapy</a></li>
+            <li><a href="?c=scroll">Autorská rubrika</a></li>
         </ul>
     </div>
 
