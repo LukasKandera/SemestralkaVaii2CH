@@ -11,6 +11,7 @@ class Predmet extends Model
     protected string $druh = "";
     protected string $text = "";
     protected ?string $image = null;
+    protected int $autor = 1;
 
     /**
      * @return string|null
@@ -101,6 +102,22 @@ class Predmet extends Model
         Model::getConnection()->beginTransaction();
         parent::delete();
         Model::getConnection()->commit();
+    }
+
+    /**
+     * @return int
+     */
+    public function getAutor(): int
+    {
+        return $this->autor;
+    }
+
+    /**
+     * @param int $autor
+     */
+    public function setAutor(int $autor): void
+    {
+        $this->autor = $autor;
     }
 
 }

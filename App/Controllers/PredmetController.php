@@ -88,6 +88,7 @@ class PredmetController extends AControllerBase
         $predmet->setDruh($this->request()->getValue("druh"));
         $predmet->setText($this->request()->getValue("text"));
         $predmet->setImage($this->processUploadedFile($predmet));
+        $predmet->setAutor(1);
         if (!is_null($oldImage) && is_null($predmet->getImage())) {
             $predmet->setImage($oldImage);
         }
