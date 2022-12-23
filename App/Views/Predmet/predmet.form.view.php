@@ -24,7 +24,7 @@ $predmet = $data['predmet'];
                 </div>
                 <div class="mb-3">
                     <label for="text">Obsah:</label>
-                    <textarea class="form-control" id="text" name="text" style="height: 100px"required><?= $predmet->getText() ?></textarea>
+                    <textarea class="form-control" id="text" name="text" style="height: 100px" required><?= $predmet->getText() ?></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Obrázok:</label>

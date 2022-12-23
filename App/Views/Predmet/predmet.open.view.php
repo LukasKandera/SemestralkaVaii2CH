@@ -21,7 +21,7 @@ $predmet = $data['predmet'];
 <div class="row">
     <div class="column side">
         <ul>
-            <li><a href="index.php">Hlavná stránka</a></li>
+            <li><a href="/index.php">Hlavná stránka</a></li>
             <li><a href="?c=predmet">Predmety</a></li>
             <li><a href="?c=character">Nehráčské postavy</a></li>
             <li><a href="?c=map">Mapy</a></li>
