@@ -12,6 +12,57 @@ class Predmet extends Model
     protected string $text = "";
     protected ?string $image = null;
     protected int $autor = 1;
+    protected int $cena = 0;
+    protected string $jedinecnost = "";
+    protected bool $sladeni = false;
+
+    /**
+     * @return int
+     */
+    public function getCena(): int
+    {
+        return $this->cena;
+    }
+
+    /**
+     * @param int $cena
+     */
+    public function setCena(int $cena): void
+    {
+        $this->cena = $cena;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJedinecnost(): string
+    {
+        return $this->jedinecnost;
+    }
+
+    /**
+     * @param string $jedinecnost
+     */
+    public function setJedinecnost(string $jedinecnost): void
+    {
+        $this->jedinecnost = $jedinecnost;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSladeni(): bool
+    {
+        return $this->sladeni;
+    }
+
+    /**
+     * @param bool $sladeni
+     */
+    public function setSladeni(bool $sladeni): void
+    {
+        $this->sladeni = $sladeni;
+    }
 
     /**
      * @return string|null

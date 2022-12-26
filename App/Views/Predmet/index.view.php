@@ -38,6 +38,7 @@ use App\Models\Predmet;
                     <a href="?c=predmet&a=create" class="btn btn-success">Pridať nový predmet</a>
                 </div>
             </div>
+
             <div class="row">
                 <?php foreach ($data['data'] as $predmet) { ?>
                     <div class="col-xl-4 col-md-4 col-sm-6">
@@ -46,6 +47,12 @@ use App\Models\Predmet;
                                 <h5 class="card-title">
                                     <?= $predmet->getNadpis() ?>
                                 </h5>
+                                <h6 class="card-title">
+                                    <?= $predmet->getDruh() ?>, <?= $predmet->getJedinecnost() ?>
+                                    <?php if($predmet->isSladeni()) {?>
+                                        (Vyžaduje sladení)
+                                    <?php } ?>
+                                </h6>
 
                                 <?php if ($predmet->getImage()) { ?>
                                     <img src="<?= $predmet->getImage() ?>" class="card-img-top" alt="...">

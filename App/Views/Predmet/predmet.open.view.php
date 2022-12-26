@@ -31,7 +31,15 @@ $predmet = $data['predmet'];
 
     <div class="column middle">
         <h1 class="NadpisThema"><?= $predmet->getNadpis() ?></h1>
-        <h2 class="NadpisKTextu"><?= $predmet->getDruh() ?></h2>
+        <h2 class="NadpisKTextu">
+            <?= $predmet->getDruh() ?>, <?= $predmet->getJedinecnost() ?>
+            <?php if($predmet->isSladeni()) {?>
+                (Vyžaduje sladení)
+            <?php } ?>
+        </h2>
+        <h2 class="NadpisKTextu">
+            Cena: <?= $predmet->getCena() ?> zlatých
+        </h2>
         <div class="podnadpis1">Popis:</div>
         <p><?= $predmet->getText() ?></p>
 
