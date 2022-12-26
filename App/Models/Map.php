@@ -8,7 +8,7 @@ class Map extends Model
 {
     protected int $id = 0;
     protected string $nazov = "";
-    protected string $kategoria = "";
+    protected int $kategoria = 0;
     protected string $opis = "";
     protected ?string $image = null;
     protected int $autor = 1;
@@ -46,17 +46,17 @@ class Map extends Model
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getKategoria(): string
+    public function getKategoria(): int
     {
         return $this->kategoria;
     }
 
     /**
-     * @param string $kategoria
+     * @param int $kategoria
      */
-    public function setKategoria(string $kategoria): void
+    public function setKategoria(int $kategoria): void
     {
         $this->kategoria = $kategoria;
     }

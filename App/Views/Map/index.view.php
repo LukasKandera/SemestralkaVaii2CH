@@ -5,6 +5,7 @@
 
 use App\Core\IAuthenticator;
 use App\Models\Map;
+use App\Models\Kategorymap;
 ?>
 <head>
     <meta charset="UTF-8">
@@ -33,6 +34,17 @@ use App\Models\Map;
                 <div class="col">
                     <a href="?c=map&a=create" class="btn btn-success">Pridať novú mapu</a>
                 </div>
+
+                <div class="column middle">
+                <label for="kategoria">Vyber filter kategórie</label>
+                <select name="kategoria" id="kategoria">
+                    <?php foreach (Kategorymap::getAll() as $kat) { ?>
+                    <option value="<?=$kat->getId()?>"><?= $kat->getNazovKategorie() ?></option>
+                    <?php } ?>
+                    <option value="0" selected>Všetko</option>
+                </select>
+                </div>
+
             </div>
             <div class="row">
                 <?php foreach ($data['data'] as $map) { ?>

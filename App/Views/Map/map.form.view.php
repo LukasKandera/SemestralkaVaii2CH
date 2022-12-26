@@ -3,6 +3,7 @@
 /** @var IAuthenticator $auth */
 
 use App\Core\IAuthenticator;
+use App\Models\Kategorymap;
 use App\Models\Map;
 
 /** @var Map $map */
@@ -18,10 +19,13 @@ $map = $data['map'];
                     <label for="nazov" class="form-label">Názov:</label>
                     <input type="text" class="form-control" id="nazov" name="nazov" aria-describedby="nazov" value="<?= $map->getNazov() ?>" required>
                 </div>
-                <div class="mb-3">
-                    <label for="kategoria" class="form-label">Kategoria:</label>
-                    <input type="text" class="form-control" id="kategoria" name="kategoria" aria-describedby="kategoria" value="<?= $map->getKategoria() ?>" required>
-                </div>
+                <label for="kategoria">Vyber filter kategórie</label>
+                <select name="kategoria" id="kategoria">
+                    <?php foreach (Kategorymap::getAll() as $kat) { ?>
+                        <option value="<?=$kat->getId()?>"><?= $kat->getNazovKategorie() ?></option>
+                    <?php } ?>
+                    <option value="0" selected>Kategoria</option>
+                </select>
                 <div class="mb-3">
                     <label for="opis">Popis mapy:</label>
                     <textarea class="form-control" id="opis" name="opis" style="height: 100px" required><?= $map->getOpis() ?></textarea>
