@@ -1,6 +1,9 @@
 <?php
 /** @var Array $data */
 /** @var IAuthenticator $auth */
+
+use App\Models\Druhpredmets;
+use App\Models\Jedinecnostpredmets;
 use App\Models\Predmet;
 use App\Core\IAuthenticator;
 /** @var Predmet $predmet */
@@ -32,7 +35,18 @@ $predmet = $data['predmet'];
     <div class="column middle">
         <h1 class="NadpisThema"><?= $predmet->getNadpis() ?></h1>
         <h2 class="NadpisKTextu">
-            <?= $predmet->getDruh() ?>, <?= $predmet->getJedinecnost() ?>
+            <?php foreach (Druhpredmets::getAll() as $druh) { ?>
+                <?php if($predmet->getDruh() == $druh->getId()) {?>
+                    <?= $druh->getNazov() ?>,
+                <?php } ?>
+            <?php } ?>
+
+            <?php foreach (Jedinecnostpredmets::getAll() as $jedinecnostpredmets) { ?>
+                <?php if($predmet->getJedinecnost() == $jedinecnostpredmets->getId()) {?>
+                    <?= $jedinecnostpredmets->getNazov() ?>
+                <?php } ?>
+            <?php } ?>
+
             <?php if($predmet->isSladeni()) {?>
                 (Vyžaduje sladení)
             <?php } ?>

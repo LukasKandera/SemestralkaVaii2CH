@@ -86,6 +86,13 @@ class PredmetController extends AControllerBase
         $oldImage = $predmet->getImage();
         $predmet->setNadpis($this->request()->getValue("nadpis"));
         $predmet->setDruh($this->request()->getValue("druh"));
+        $predmet->setJedinecnost($this->request()->getValue("jedinecnost"));
+        if ($this->request()->getValue("sladeni") == "1") {
+            $predmet->setSladeni(1);
+        } else {
+            $predmet->setSladeni(0);
+        }
+        $predmet->setCena($this->request()->getValue("cena"));
         $predmet->setText($this->request()->getValue("text"));
         $predmet->setImage($this->processUploadedFile($predmet));
         $predmet->setAutor(1);

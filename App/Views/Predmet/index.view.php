@@ -5,6 +5,8 @@
 /** @var Predmet $predmet */
 
 use App\Core\IAuthenticator;
+use App\Models\Druhpredmets;
+use App\Models\Jedinecnostpredmets;
 use App\Models\Predmet;
 
 ?>
@@ -34,8 +36,26 @@ use App\Models\Predmet;
     <div class="column middle">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="column middle">
                     <a href="?c=predmet&a=create" class="btn btn-success">Pridať nový predmet</a>
+                </div>
+                <div class="column middle">
+                    <label for="druh">Druh:</label>
+                    <select name="druh" id="druh">
+                        <?php foreach (Druhpredmets::getAll() as $druh) { ?>
+                            <option value="<?=$druh->getId()?>"><?= $druh->getNazov() ?></option>
+                        <?php } ?>
+                        <option value="0" selected>Všetko</option>
+                    </select>
+                </div>
+                <div class="column middle">
+                    <label for="jedinecnost">Jedinecnost:</label>
+                    <select name="jedinecnost" id="jedinecnost">
+                        <?php foreach (Jedinecnostpredmets::getAll() as $jedinecnost) { ?>
+                            <option value="<?=$jedinecnost->getId()?>"><?= $jedinecnost->getNazov() ?></option>
+                        <?php } ?>
+                        <option value="0" selected>Všetko</option>
+                    </select>
                 </div>
             </div>
 
@@ -48,7 +68,18 @@ use App\Models\Predmet;
                                     <?= $predmet->getNadpis() ?>
                                 </h5>
                                 <h6 class="card-title">
-                                    <?= $predmet->getDruh() ?>, <?= $predmet->getJedinecnost() ?>
+                                    <?php foreach (Druhpredmets::getAll() as $druh) { ?>
+                                        <?php if($predmet->getDruh() == $druh->getId()) {?>
+                                            <?= $druh->getNazov() ?>,
+                                            <?php } ?>
+                                    <?php } ?>
+
+                                    <?php foreach (Jedinecnostpredmets::getAll() as $jedinecnostpredmets) { ?>
+                                        <?php if($predmet->getJedinecnost() == $jedinecnostpredmets->getId()) {?>
+                                            <?= $jedinecnostpredmets->getNazov() ?>
+                                        <?php } ?>
+                                    <?php } ?>
+
                                     <?php if($predmet->isSladeni()) {?>
                                         (Vyžaduje sladení)
                                     <?php } ?>

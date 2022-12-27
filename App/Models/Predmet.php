@@ -8,13 +8,13 @@ class Predmet extends Model
 {
     protected int $id = 0;
     protected string $nadpis = "";
-    protected string $druh = "";
+    protected int $druh = 0;
     protected string $text = "";
     protected ?string $image = null;
     protected int $autor = 1;
     protected int $cena = 0;
-    protected string $jedinecnost = "";
-    protected bool $sladeni = false;
+    protected int $jedinecnost = 0;
+    protected int $sladeni = 0;
 
     /**
      * @return int
@@ -33,33 +33,33 @@ class Predmet extends Model
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getJedinecnost(): string
+    public function getJedinecnost(): int
     {
         return $this->jedinecnost;
     }
 
     /**
-     * @param string $jedinecnost
+     * @param int $jedinecnost
      */
-    public function setJedinecnost(string $jedinecnost): void
+    public function setJedinecnost(int $jedinecnost): void
     {
         $this->jedinecnost = $jedinecnost;
     }
 
     /**
-     * @return bool
+     * @return int
      */
-    public function isSladeni(): bool
+    public function isSladeni(): int
     {
         return $this->sladeni;
     }
 
     /**
-     * @param bool $sladeni
+     * @param int $sladeni
      */
-    public function setSladeni(bool $sladeni): void
+    public function setSladeni(int $sladeni): void
     {
         $this->sladeni = $sladeni;
     }
@@ -113,17 +113,17 @@ class Predmet extends Model
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getDruh(): string
+    public function getDruh(): int
     {
         return $this->druh;
     }
 
     /**
-     * @param string $druh
+     * @param int $druh
      */
-    public function setDruh(string $druh): void
+    public function setDruh(int $druh): void
     {
         $this->druh = $druh;
     }
