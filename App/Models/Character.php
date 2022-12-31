@@ -8,8 +8,8 @@ class Character extends Model
 {
     protected int $id = 0;
     protected string $meno= "";
-    protected string $rasa = "";
-    protected string $typ = "";
+    protected int $rasa = 0;
+    protected int $typ = 0;
     protected string $popis = "";
     protected string $povaha = "";
     protected string $historia = "";
@@ -69,33 +69,33 @@ class Character extends Model
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getRasa(): string
+    public function getRasa(): int
     {
         return $this->rasa;
     }
 
     /**
-     * @param string $rasa
+     * @param int $rasa
      */
-    public function setRasa(string $rasa): void
+    public function setRasa(int $rasa): void
     {
         $this->rasa = $rasa;
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getTyp(): string
+    public function getTyp(): int
     {
         return $this->typ;
     }
 
     /**
-     * @param string $typ
+     * @param int $typ
      */
-    public function setTyp(string $typ): void
+    public function setTyp(int $typ): void
     {
         $this->typ = $typ;
     }
