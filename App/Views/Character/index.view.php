@@ -5,6 +5,8 @@
 
 use App\Core\IAuthenticator;
 use App\Models\Character;
+use App\Models\Rasacharacter;
+use App\Models\Typcharacter;
 
 ?>
 
@@ -36,6 +38,24 @@ use App\Models\Character;
                 <div class="col">
                     <a href="?c=character&a=create" class="btn btn-success">Pridať novú postavu</a>
                 </div>
+                <div class="column middle">
+                    <label for="rasa">Národ/Rasa:</label>
+                    <select name="rasa" id="rasa">
+                        <?php foreach (Rasacharacter::getAll() as $rasa) { ?>
+                            <option value="<?=$rasa->getId()?>"><?= $rasa->getNazov() ?></option>
+                        <?php } ?>
+                        <option value="0" selected>Všetko</option>
+                    </select>
+                </div>
+                <div class="column middle">
+                    <label for="typ">Typ:</label>
+                    <select name="typ" id="typ">
+                        <?php foreach (Typcharacter::getAll() as $typ) { ?>
+                            <option value="<?=$typ->getId()?>"><?= $typ->getNazov() ?></option>
+                        <?php } ?>
+                        <option value="0" selected>Všetko</option>
+                    </select>
+                </div>
             </div>
             <div class="row">
                 <?php foreach ($data['data'] as $character) { ?>
@@ -45,7 +65,20 @@ use App\Models\Character;
                                 <h5 class="card-title">
                                     <?= $character->getMeno() ?>
                                 </h5>
+                                <h6 class="card-title">
+                                    <?php foreach (Rasacharacter::getAll() as $rasa) { ?>
+                                        <?php if($character->getRasa() == $rasa->getId()) {?>
+                                            <?= $rasa->getNazov() ?>,
+                                        <?php } ?>
+                                    <?php } ?>
 
+                                    <?php foreach (Typcharacter::getAll() as $typ) { ?>
+                                        <?php if($character->getTyp() == $typ->getId()) {?>
+                                            <?= $typ->getNazov() ?>
+                                        <?php } ?>
+                                    <?php } ?>
+
+                                </h6>
                                 <?php if ($character->getObrazok()) { ?>
                                     <img src="<?= $character->getObrazok() ?>" class="card-img-top" alt="...">
                                 <?php } else {?>

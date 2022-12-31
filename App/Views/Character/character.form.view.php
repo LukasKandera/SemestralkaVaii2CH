@@ -6,6 +6,8 @@
 
 use App\Core\IAuthenticator;
 use App\Models\Character;
+use App\Models\Rasacharacter;
+use App\Models\Typcharacter;
 
 /** @var Character $character */
 $character = $data['character'];
@@ -15,22 +17,34 @@ $character = $data['character'];
         <div class="col">
             <h3>Editácia/pridanie postavy</h3>
             <form action="?c=character&a=store" method="post" enctype="multipart/form-data">
+
                 <input type="hidden" value="<?= $character->getId() ?>" name="id">
+
                 <div class="mb-3">
                     <label for="meno" class="form-label">Meno postavy:</label>
                     <input type="text" class="form-control" id="meno" name="meno" aria-describedby="meno"
                            value="<?= $character->getMeno() ?>" required>
                 </div>
                 <div class="mb-3">
-                    <label for="rasa" class="form-label">Národ:</label>
-                    <input type="text" class="form-control" id="rasa" name="rasa" aria-describedby="rasa"
-                           value="<?= $character->getRasa() ?>" required>
+                    <label for="rasa">Národ:</label>
+                    <select name="rasa" id="rasa">
+                        <?php foreach (Rasacharacter::getAll() as $rasa) { ?>
+                            <option value="<?=$rasa->getId()?>" <?php if($character->getRasa() == $rasa->getId()) { ?> selected <?php } ?> > <?= $rasa->getNazov() ?></option>
+                        <?php } ?>
+                        <option value="0" <?php if($character->getRasa() == 0) { ?> selected <?php } ?> >Rasa</option>
+                    </select>
                 </div>
+
                 <div class="mb-3">
-                    <label for="typ" class="form-label">Typ/Druh:</label>
-                    <input type="text" class="form-control" id="typ" name="typ" aria-describedby="typ"
-                           value="<?= $character->getTyp() ?>" required>
+                    <label for="typ">Typ/Druh:</label>
+                    <select name="typ" id="typ">
+                        <?php foreach (Typcharacter::getAll() as $typ) { ?>
+                            <option value="<?=$typ->getId()?>" <?php if($character->getTyp() == $typ->getId()) { ?> selected <?php } ?> > <?= $typ->getNazov() ?></option>
+                        <?php } ?>
+                        <option value="0" <?php if($character->getTyp() == 0) { ?> selected <?php } ?> >Druh</option>
+                    </select>
                 </div>
+
                 <div class="mb-3">
                     <label for="popis">Popis postavy:</label>
                     <textarea class="form-control" id="popis" name="popis" style="height: 100px"

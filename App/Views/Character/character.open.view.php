@@ -4,6 +4,9 @@
 
 use App\Models\Character;
 use App\Core\IAuthenticator;
+use App\Models\Rasacharacter;
+use App\Models\Typcharacter;
+
 /** @var Character $character */
 $character = $data['character'];
 ?>
@@ -34,7 +37,19 @@ $character = $data['character'];
         <div class="row">
         <div class="column middle">
             <h1 class="NadpisThema"><?= $character->getMeno() ?></h1>
-            <h2 class="NadpisKTextu"><?= $character->getRasa() ?>, <?= $character->getTyp() ?></h2>
+            <h2 class="NadpisKTextu">
+                <?php foreach (Rasacharacter::getAll() as $rasa) { ?>
+                    <?php if($character->getRasa() == $rasa->getId()) {?>
+                        <?= $rasa->getNazov() ?>,
+                    <?php } ?>
+                <?php } ?>
+
+                <?php foreach (Typcharacter::getAll() as $typ) { ?>
+                    <?php if($character->getTyp() == $typ->getId()) {?>
+                        <?= $typ->getNazov() ?>
+                    <?php } ?>
+                <?php } ?>
+            </h2>
             <div class="podnadpis1">Popis:</div>
             <p><?= $character->getPopis() ?></p>
             <div class="podnadpis1">Povaha:</div>
