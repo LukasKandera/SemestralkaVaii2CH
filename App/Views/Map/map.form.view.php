@@ -27,10 +27,6 @@ $map = $data['map'];
                     <option value="0" selected>Kategoria</option>
                 </select>
                 <div class="mb-3">
-                    <label for="opis">Popis mapy:</label>
-                    <textarea class="form-control" id="opis" name="opis" style="height: 100px" required><?= $map->getOpis() ?></textarea>
-                </div>
-                <div class="mb-3">
                     <label for="image" class="form-label">Obrázok:</label>
                     <input class="form-control" type="file" id="image" name="image">
                 </div>

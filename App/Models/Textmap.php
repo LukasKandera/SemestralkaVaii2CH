@@ -4,13 +4,12 @@ namespace App\Models;
 
 use App\Core\Model;
 
-class Map extends Model
+class Textmap extends Model
 {
     protected int $id = 0;
     protected string $nazov = "";
-    protected int $kategoria = 0;
-    protected ?string $image = null;
-    protected int $autor = 1;
+    protected string $text = "";
+    protected int $parent = 0;
 
     /**
      * @return int
@@ -45,61 +44,41 @@ class Map extends Model
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getKategoria(): int
+    public function getText(): string
     {
-        return $this->kategoria;
+        return $this->text;
     }
 
     /**
-     * @param int $kategoria
+     * @param string $text
      */
-    public function setKategoria(int $kategoria): void
+    public function setText(string $text): void
     {
-        $this->kategoria = $kategoria;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param string|null $image
-     */
-    public function setImage(?string $image): void
-    {
-        $this->image = $image;
+        $this->text = $text;
     }
 
     /**
      * @return int
      */
-    public function getAutor(): int
+    public function getParent(): int
     {
-        return $this->autor;
+        return $this->parent;
     }
 
     /**
-     * @param int $autor
+     * @param int $parent
      */
-    public function setAutor(int $autor): void
+    public function setParent(int $parent): void
     {
-        $this->autor = $autor;
+        $this->parent = $parent;
     }
-    /**
-     * @return void
-     * @throws \Exception
-     */
+
     public function delete()
     {
         Model::getConnection()->beginTransaction();
         parent::delete();
         Model::getConnection()->commit();
     }
-
 }

@@ -86,7 +86,6 @@ class MapController extends AControllerBase
         $oldImage = $map->getImage();
         $map->setNazov($this->request()->getValue("nazov"));
         $map->setKategoria($this->request()->getValue("kategoria"));
-        $map->setOpis($this->request()->getValue("opis"));
         $map->setImage($this->processUploadedFile($map));
         $map->setAutor(1);
         if (!is_null($oldImage) && is_null($map->getImage())) {
