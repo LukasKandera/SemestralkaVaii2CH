@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\AControllerBase;
+use App\Core\Responses\JsonResponse;
 use App\Core\Responses\RedirectResponse;
 use App\Core\Responses\Response;
 use App\Models\Character;
@@ -74,11 +75,21 @@ class CharacterController extends AControllerBase
             'character.open'
         );
     }
+    /**
+     * Vráti zoznam postav
+     * @return JsonResponse
+     */
+    public function characters() :JsonResponse
+    {
+        $characters = Character::getAll('', [], 'id DESC');
+        return $this->json($characters);
+    }
 
     /**
      * @return \App\Core\Responses\RedirectResponse
      * @throws \Exception
      */
+
     public function store()
     {
         $id = $this->request()->getValue('id');
