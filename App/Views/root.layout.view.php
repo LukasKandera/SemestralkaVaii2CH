@@ -15,41 +15,40 @@
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../public/css/styl.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
     <script src="../../public/js/script.js"></script>
+
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-light">
+<div class="headermain row" id="HM">
+    <h1 class="NadpisHeaderMain">Archív na D&D</h1>
+</div>
+<nav class="navbar navbar-expand-sm  header row">
     <div class="container-fluid">
         <a class="navbar-brand" href="?c=home">
-            <img src="../../public/img/d20.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
-                 title="<?= \App\Config\Configuration::APP_NAME ?>">
+            <img src="../../public/img/d20.png" title="<?= \App\Config\Configuration::APP_NAME ?>" alt="img">
         </a>
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="?c=home&a=contact">Kontakt</a>
-            </li>
-        </ul>
+        <div class="column"></div>
+        <div class="btn-group column head" role="group" aria-label="Basic example">
+            <a class="btn btn-dark btn-lg btn-block" href="?c=home&a=contact">Kontakt</a>
+            <a class="btn btn-dark btn-lg btn-block" href="?c=predmet">Predmety</a>
+            <a class="btn btn-dark btn-lg btn-block" href="?c=character">Postavy</a>
+            <a class="btn btn-dark btn-lg btn-block" href="?c=map">Mapy</a>
+            <a class="btn btn-dark btn-lg btn-block" href="?c=map">Príbehy</a>
+        </div>
         <?php if ($auth->isLogged()) { ?>
-            <span class="navbar-text">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="?c=auth&a=logout">Odhlásenie</a>
-                </li>
-            </ul>
+            <span class="normal column">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>
+            <a class="column btn btn-danger btn-sm" href="?c=auth&a=logout">Odhlásenie</a>
+
         <?php } else { ?>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= \App\Config\Configuration::LOGIN_URL ?>">Prihlásenie</a>
-                </li>
-            </ul>
+            <a class="column btn btn-primary btn-sm" href="<?= \App\Config\Configuration::LOGIN_URL ?>">Prihlásenie</a>
         <?php } ?>
-        <a class="navbar-brand" href="?c=home">
-            <img src="../../public/img/user.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
-                 title="<?= \App\Config\Configuration::APP_NAME ?>">
+        <a class="navbar-brand" href="<?= \App\Config\Configuration::LOGIN_URL ?>">
+            <img src="../../public/img/user.png" title="<?= \App\Config\Configuration::APP_NAME ?>" alt="img">
         </a>
     </div>
 </nav>
-<div class="container-fluid mt-3">
+<div class="container-fluid ">
     <div class="web-content">
         <?= $contentHTML ?>
     </div>

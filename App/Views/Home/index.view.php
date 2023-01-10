@@ -6,19 +6,9 @@
     <script src="../../../public/js/script.js"></script>
 </head>
 <body>
-<div class="headermain row" id="HM">
-    <h1 class="NadpisHeaderMain">Archív na D&D</h1>
-</div>
+
 <div class="row">
-    <div class="column side">
-        <ul>
-            <li><a href="/index.php">Hlavná stránka</a></li>
-            <li><a href="/index.php?c=predmet">Predmety</a></li>
-            <li><a href="/index.php?c=character">Nehráčské postavy</a></li>
-            <li><a href="?c=map">Mapy</a></li>
-            <li><a href="?c=scroll">Autorská rubrika</a></li>
-        </ul>
-    </div>
+
     <div class="column middle">
         <img class="imgCenter" src="../../../public/img/dd1.jpg" alt="DnD uzky obr">
         <h1>Na úvod čo je to D&D</h1>

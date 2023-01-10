@@ -17,23 +17,13 @@ use App\Models\Typcharacter;
     <link rel="stylesheet" href="../../../public/css/style.css">
 </head>
 <body>
-<div class="header row" >
-    <h1>Nehráčske postavy</h1>
-</div>
-
 <div class="row">
     <div class="column side">
-        <ul>
-            <li><a href="/index.php">Hlavná stránka</a></li>
-            <li><a href="?c=predmet">Predmety</a></li>
-            <li><a href="?c=character">Nehráčské postavy</a></li>
-            <li><a href="?c=map">Mapy</a></li>
-            <li><a href="?c=scroll">Autorská rubrika</a></li>
-        </ul>
-    </div>
 
+    </div>
     <div class="column middle">
         <div class="container-fluid">
+            <h1>Nehráčske postavy</h1>
             <div class="row">
                 <div class="column box">
                     <a href="?c=character&a=create" class="btn btn-success">Pridať novú postavu</a>
