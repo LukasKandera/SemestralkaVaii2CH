@@ -22,7 +22,10 @@ use App\Models\Predmet;
 
 <div class="row">
     <div class="column side">
-
+        <?php foreach ($data['data'] as $predmet) { ?>
+            <p></p>
+            <a type="button" href="#<?=$predmet->getId()?>" class="btn btn-dark btn-lg row"><?=$predmet->getNadpis()?></a>
+        <?php } ?>
     </div>
     <div class="column middle">
         <div class="container-fluid">
@@ -55,8 +58,8 @@ use App\Models\Predmet;
                 <?php foreach ($data['data'] as $predmet) { ?>
                     <div class="col-xl-4 col-md-4 col-sm-6">
                         <div class="card my-3">
-                            <div class="card-body">
-                                <h5 class="card-title">
+                            <div class="card-body text-center">
+                                <h5 id="<?= $predmet->getId() ?>" class="card-title">
                                     <?= $predmet->getNadpis() ?>
                                 </h5>
                                 <h6 class="card-title">

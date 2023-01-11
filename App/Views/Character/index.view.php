@@ -19,7 +19,10 @@ use App\Models\Typcharacter;
 <body>
 <div class="row">
     <div class="column side">
-
+        <?php foreach ($data['data'] as $character) { ?>
+            <p></p>
+            <a type="button" href="#<?=$character->getId()?>" class="btn btn-dark btn-lg row"><?=$character->getMeno()?></a>
+        <?php } ?>
     </div>
     <div class="column middle">
         <div class="container-fluid">
@@ -58,7 +61,7 @@ use App\Models\Typcharacter;
                     <div class="col-xl-4 col-md-4 col-sm-6">
                         <div class="card my-3 text-center">
                             <div class="card-body">
-                                <h5 class="card-title">
+                                <h5 id="<?= $character->getId() ?>" class="card-title">
                                     <?= $character->getMeno() ?>
                                 </h5>
                                 <h6 class="card-title">

@@ -11,9 +11,10 @@ body {
 }
 h1.NadpisSekcia {
   text-align: center;
-  padding: 5px;
+  padding: 15px;
   font-family: fantasy;
   color: darkgreen;
+  border-bottom: 3px solid darkgreen;
 }
 .header {
   background-image: url("/public/img/header.jpg");
