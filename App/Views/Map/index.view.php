@@ -20,7 +20,7 @@ use App\Models\Kategorymap;
     </div>
     <div class="column middle">
         <div class="container-fluid">
-            <h1>Mapy každého druhu</h1>
+            <h1 class="NadpisSekcia">Mapy každého druhu</h1>
             <div class="row">
                 <div class="col">
                     <a href="?c=map&a=create" class="btn btn-success">Pridať novú mapu</a>

@@ -26,7 +26,7 @@ use App\Models\Predmet;
     </div>
     <div class="column middle">
         <div class="container-fluid">
-            <h1>Predmety</h1>
+            <h1 class="NadpisSekcia">Predmety</h1>
             <div class="row">
                 <div class="column middle">
                     <a href="?c=predmet&a=create" class="btn btn-success">Pridať nový predmet</a>

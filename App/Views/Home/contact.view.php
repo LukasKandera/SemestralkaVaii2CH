@@ -1,4 +1,5 @@
 <?php /** @var Array $data */ ?>
+
 <div class="row">
     <div class="col">
         <h3>Fakulta riadenia a informatiky</h3>

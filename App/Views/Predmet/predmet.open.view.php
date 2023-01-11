@@ -47,7 +47,7 @@ $predmet = $data['predmet'];
         <p><?= $predmet->getText() ?></p>
 
         <?php if ($predmet->getImage()) { ?>
-            <img src="<?= $predmet->getImage() ?>" class="imgCenter" alt="...">
+            <img src="<?= $predmet->getImage() ?>" class="imgBox" alt="...">
         <?php } else {?>
             <img src="<?= "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "itemDef.png" ?>" class="imgCenter" alt="...">
         <?php } ?>

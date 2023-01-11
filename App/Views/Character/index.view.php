@@ -23,7 +23,7 @@ use App\Models\Typcharacter;
     </div>
     <div class="column middle">
         <div class="container-fluid">
-            <h1>Nehráčske postavy</h1>
+            <h1 class="NadpisSekcia">Nehráčske postavy</h1>
             <div class="row">
                 <div class="column box">
                     <a href="?c=character&a=create" class="btn btn-success">Pridať novú postavu</a>

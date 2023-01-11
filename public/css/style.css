@@ -9,6 +9,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: small;
 }
+h1.NadpisSekcia {
+  text-align: center;
+  padding: 5px;
+  font-family: fantasy;
+  color: darkgreen;
+}
 .header {
   background-image: url("/public/img/header.jpg");
   padding: 5px;
@@ -28,7 +34,7 @@ body {
 }
 
 .column {
-  padding: 10px;
+
 }
 .column.box {
   -webkit-flex: 1;
@@ -114,9 +120,11 @@ div.podnadpis1 {
 }
 .imgBox {
   display: block;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   max-height: 400px;
+  border: 3px solid black;
 }
 .centerMap{
   display: block;

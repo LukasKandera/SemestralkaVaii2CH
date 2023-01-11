@@ -11,7 +11,7 @@
 
     <div class="column middle">
         <img class="imgCenter" src="../../../public/img/dd1.jpg" alt="DnD uzky obr">
-        <h1>Na úvod čo je to D&D</h1>
+        <h1 class="NadpisSekcia">Na úvod čo je to D&D</h1>
         <p class="citacia">
             Dungeons & Dragons (D&D) je fantasy hra na hrdinov (RPG), pôvodne navrhnutá Gary Gygaxom a Dave Arnesonom a vydaná spoločnosťou Tactical Studies Rules (TSR). Od roku 1997 hru publikujú Wizards of the Coast. Vydanie D&D sa všeobecne považuje za začiatok moderných hier na hrdinov a role-playing priemyslu.
         </p>

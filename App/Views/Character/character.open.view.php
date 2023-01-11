@@ -24,7 +24,6 @@ $character = $data['character'];
 
     </div>
     <div class="column middle">
-        <h1>Nehráčske postavy</h1>
         <div class="row">
         <div class="column middle">
             <h1 class="NadpisThema"><?= $character->getMeno() ?></h1>
@@ -63,7 +62,7 @@ $character = $data['character'];
                 <img src="<?= "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "charDefault.png" ?>" class="imgBox" alt="...">
             <?php } ?>
         </div>
-        </div>
+
     </div>
 
 
