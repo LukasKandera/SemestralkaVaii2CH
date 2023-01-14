@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class="headermain row" id="HM">
-    <h1 class="NadpisHeaderMain">Archív na D&D</h1>
+    <h1 class="NadpisHeaderMain">Archív na D&D CZ/SK</h1>
 </div>
 <nav class="navbar navbar-expand-sm  header row">
     <div class="container-fluid">
@@ -34,10 +34,12 @@
             <a class="btn btn-dark btn-lg btn-block" href="?c=predmet">Predmety</a>
             <a class="btn btn-dark btn-lg btn-block" href="?c=character">Postavy</a>
             <a class="btn btn-dark btn-lg btn-block" href="?c=map">Mapy</a>
+            <?php if ($auth->isLogged()) { ?>
             <a class="btn btn-dark btn-lg btn-block" href="?c=map">Príbehy</a>
+            <?php } ?>
         </div>
         <?php if ($auth->isLogged()) { ?>
-            <span class="normal column">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>
+            <span class="normal column">Prihlásený používateľ: <b class="textGreen"><?= $auth->getLoggedUserName() ?></b></span>
             <a class="column btn btn-danger btn-sm" href="?c=auth&a=logout">Odhlásenie</a>
 
         <?php } else { ?>

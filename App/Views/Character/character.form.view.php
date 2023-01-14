@@ -19,7 +19,8 @@ $character = $data['character'];
             <form action="?c=character&a=store" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" value="<?= $character->getId() ?>" name="id">
-
+                <label for="autor" class="form-label" hidden></label>
+                <input type="hidden" value="<?= $auth->getLoggedUserId() ?>" id="autor" name="autor">
                 <div class="mb-3">
                     <label for="meno" class="form-label">Meno postavy:</label>
                     <input type="text" class="form-control" id="meno" name="meno" aria-describedby="meno"

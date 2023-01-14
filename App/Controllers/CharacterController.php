@@ -105,7 +105,7 @@ class CharacterController extends AControllerBase
         $character->setIdealy($this->request()->getValue("idealy"));
         $character->setPovolanieCech($this->request()->getValue("povolanieCech"));
         $character->setHlas($this->request()->getValue("hlas"));
-        $character->setAutor(1);
+        $character->setAutor($this->request()->getValue("autor"));
 
         $character->setObrazok($this->processUploadedFile($character));
         if (!is_null($oldImage) && is_null($character->getObrazok())) {

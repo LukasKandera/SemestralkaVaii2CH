@@ -11,6 +11,15 @@ class Textmap extends Model
     protected string $text = "";
     protected int $parent = 0;
 
+    protected int $autor = 0;
+
+    public function __construct(string $nazov = "", string $text = "", int $parent = 0)
+    {
+        $this->nazov = $nazov;
+        $this->text = $text;
+        $this->parent = $parent;
+    }
+
     /**
      * @return int
      */
@@ -73,6 +82,12 @@ class Textmap extends Model
     public function setParent(int $parent): void
     {
         $this->parent = $parent;
+    }
+
+    public function autorT()
+    {
+        $map = Map::getOne($this->parent);
+        $this->autor =$map->getAutor();
     }
 
     public function delete()

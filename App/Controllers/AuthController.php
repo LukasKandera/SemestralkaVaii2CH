@@ -30,6 +30,7 @@ class AuthController extends AControllerBase
     {
         $formData = $this->app->getRequest()->getPost();
         $logged = null;
+        $heslo = password_hash("123", PASSWORD_DEFAULT);
         if (isset($formData['submit'])) {
             $logged = $this->app->getAuth()->login($formData['login'], $formData['password']);
             if ($logged) {

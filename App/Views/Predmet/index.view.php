@@ -16,6 +16,7 @@ use App\Models\Predmet;
     <title>Predmety</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../public/css/style.css">
+    <script src="../../../public/js/filterItems.js"></script>
 </head>
 <body>
 
@@ -30,30 +31,44 @@ use App\Models\Predmet;
     <div class="column middle">
         <div class="container-fluid">
             <h1 class="NadpisSekcia">Predmety</h1>
-            <div class="row">
-                <div class="column middle">
-                    <a href="?c=predmet&a=create" class="btn btn-success">Pridať nový predmet</a>
+            <?php if ($auth->isLogged()) { ?>
+                <div class="row">
+                    <div class="column box">
+                        <a href="?c=predmet&a=create" class="btn btn-success">Pridať nový predmet</a>
+                    </div>
+                    <div class="column middle">
+                        <div class="row">
+                            <label for="druh">Druh:</label>
+                            <select name="druh" id="druh">
+                                <?php foreach (Druhpredmets::getAll() as $druh) { ?>
+                                    <option value="<?=$druh->getId()?>"><?= $druh->getNazov() ?></option>
+                                <?php } ?>
+                                <option value="0" selected>Všetky</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label for="jedinecnost">Jedinecnost:</label>
+                            <select name="jedinecnost" id="jedinecnost">
+                                <?php foreach (Jedinecnostpredmets::getAll() as $jedinecnost) { ?>
+                                    <option value="<?=$jedinecnost->getId()?>"><?= $jedinecnost->getNazov() ?></option>
+                                <?php } ?>
+                                <option value="0" selected>Všetko</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column box">
+                        <button id="filtruj" class="btn btn-success">Filtruj</button>
+                    </div>
                 </div>
-                <div class="column middle">
-                    <label for="druh">Druh:</label>
-                    <select name="druh" id="druh">
-                        <?php foreach (Druhpredmets::getAll() as $druh) { ?>
-                            <option value="<?=$druh->getId()?>"><?= $druh->getNazov() ?></option>
-                        <?php } ?>
-                        <option value="0" selected>Všetko</option>
-                    </select>
+                <div class="row podnadpis1">
+                    Filtrované postavy:
                 </div>
-                <div class="column middle">
-                    <label for="jedinecnost">Jedinecnost:</label>
-                    <select name="jedinecnost" id="jedinecnost">
-                        <?php foreach (Jedinecnostpredmets::getAll() as $jedinecnost) { ?>
-                            <option value="<?=$jedinecnost->getId()?>"><?= $jedinecnost->getNazov() ?></option>
-                        <?php } ?>
-                        <option value="0" selected>Všetko</option>
-                    </select>
-                </div>
-            </div>
+                <div class="row" id="chars"></div>
 
+                <div class="row podnadpis1">
+                    Všetky predmety:
+                </div>
+            <?php } ?>
             <div class="row">
                 <?php foreach ($data['data'] as $predmet) { ?>
                     <div class="col-xl-4 col-md-4 col-sm-6">
@@ -86,10 +101,14 @@ use App\Models\Predmet;
                                     <img src="<?= "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "itemDef.png" ?>" class="card-img-top" alt="...">
                                 <?php } ?>
                                 <p></p>
-                                <p align="center">
+                                <p>
                                     <a href="?c=predmet&a=open&id=<?= $predmet->getId() ?>" class="btn btn-success">Otvoriť</a>
-                                    <a href="?c=predmet&a=edit&id=<?= $predmet->getId() ?>" class="btn btn-warning">Upraviť</a>
-                                    <a href="?c=predmet&a=delete&id=<?= $predmet->getId() ?>" class="btn btn-danger">Zmazať</a>
+                                    <?php if ($auth->isLogged()) { ?>
+                                        <?php if ($predmet->getAutor() == $auth->getLoggedUserId()) { ?>
+                                            <a href="?c=predmet&a=edit&id=<?= $predmet->getId() ?>" class="btn btn-warning">Upraviť</a>
+                                            <a href="?c=predmet&a=delete&id=<?= $predmet->getId() ?>" class="btn btn-danger">Zmazať</a>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </p>
                             </div>
                         </div>

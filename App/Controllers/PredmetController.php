@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\AControllerBase;
+use App\Core\Responses\JsonResponse;
 use App\Core\Responses\RedirectResponse;
 use App\Core\Responses\Response;
 use App\Models\Predmet;
@@ -75,6 +76,12 @@ class PredmetController extends AControllerBase
         );
     }
 
+    public function predmets() :JsonResponse
+    {
+        $predmets = Predmet::getAll('', [], 'id DESC');
+        return $this->json($predmets);
+    }
+
     /**
      * @return \App\Core\Responses\RedirectResponse
      * @throws \Exception
@@ -95,7 +102,7 @@ class PredmetController extends AControllerBase
         $predmet->setCena($this->request()->getValue("cena"));
         $predmet->setText($this->request()->getValue("text"));
         $predmet->setImage($this->processUploadedFile($predmet));
-        $predmet->setAutor(1);
+        $predmet->setAutor($this->request()->getValue("autor"));
         if (!is_null($oldImage) && is_null($predmet->getImage())) {
             $predmet->setImage($oldImage);
         }

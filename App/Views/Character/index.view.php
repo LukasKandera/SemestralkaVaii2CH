@@ -15,6 +15,7 @@ use App\Models\Typcharacter;
     <title>Nehráčske postavy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../public/css/style.css">
+    <script src="../../../public/js/filerChars.js"></script>
 </head>
 <body>
 <div class="row">
@@ -27,35 +28,44 @@ use App\Models\Typcharacter;
     <div class="column middle">
         <div class="container-fluid">
             <h1 class="NadpisSekcia">Nehráčske postavy</h1>
-            <div class="row">
-                <div class="column box">
-                    <a href="?c=character&a=create" class="btn btn-success">Pridať novú postavu</a>
-                </div>
-                <div class="column middle">
-                    <div class="row">
-                    <label for="rasa">Národ/Rasa:</label>
-                    <select name="rasa" id="rasa">
-                        <?php foreach (Rasacharacter::getAll() as $rasa) { ?>
-                            <option value="<?=$rasa->getId()?>"><?= $rasa->getNazov() ?></option>
-                        <?php } ?>
-                        <option value="0" selected>Všetky rasy</option>
-                    </select>
+            <?php if ($auth->isLogged()) { ?>
+                <div class="row">
+                    <div class="column box">
+                        <a href="?c=character&a=create" class="btn btn-success">Pridať novú postavu</a>
                     </div>
-                    <div class="row">
-                    <label for="typ">Typ:</label>
-                    <select name="typ" id="typ">
-                        <?php foreach (Typcharacter::getAll() as $typ) { ?>
-                            <option value="<?=$typ->getId()?>"><?= $typ->getNazov() ?></option>
-                        <?php } ?>
-                        <option value="0" selected>Všetky typy</option>
-                    </select>
+
+                    <div class="column middle">
+                        <div class="row">
+                        <label for="rasa">Národ/Rasa:</label>
+                        <select name="rasa" id="rasa">
+                            <?php foreach (Rasacharacter::getAll() as $rasa) { ?>
+                                <option value="<?=$rasa->getId()?>"><?= $rasa->getNazov() ?></option>
+                            <?php } ?>
+                            <option value="0" selected>Všetky rasy</option>
+                        </select>
+                        </div>
+                        <div class="row">
+                        <label for="typ">Typ:</label>
+                        <select name="typ" id="typ">
+                            <?php foreach (Typcharacter::getAll() as $typ) { ?>
+                                <option value="<?=$typ->getId()?>"><?= $typ->getNazov() ?></option>
+                            <?php } ?>
+                            <option value="0" selected>Všetky typy</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="column box">
+                        <button id="filtruj" class="btn btn-success">Filtruj</button>
                     </div>
                 </div>
-                <div class="column box">
-                    <button id="filtruj" class="btn btn-success">Filtruj</button>
+                <div class="row podnadpis1">
+                    Filtrované postavy:
                 </div>
-            </div>
-            <div class="row" id="chars"></div>
+                <div class="row" id="chars"></div>
+                <div class="row podnadpis1">
+                    Všetky postavy:
+                </div>
+            <?php } ?>
             <div class="row">
                 <?php foreach ($data['data'] as $character) { ?>
                     <div class="col-xl-4 col-md-4 col-sm-6">
@@ -86,8 +96,12 @@ use App\Models\Typcharacter;
                                 <p></p>
                                 <p>
                                     <a href="?c=character&a=open&id=<?= $character->getId() ?>" class="btn btn-success">Otvoriť</a>
-                                    <a href="?c=character&a=edit&id=<?= $character->getId() ?>" class="btn btn-warning">Upraviť</a>
-                                    <a href="?c=character&a=delete&id=<?= $character->getId() ?>" class="btn btn-danger">Zmazať</a>
+                                    <?php if ($auth->isLogged()) { ?>
+                                        <?php if ($character->getAutor() == $auth->getLoggedUserId()) { ?>
+                                            <a href="?c=character&a=edit&id=<?= $character->getId() ?>" class="btn btn-warning">Upraviť</a>
+                                            <a href="?c=character&a=delete&id=<?= $character->getId() ?>" class="btn btn-danger">Zmazať</a>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </p>
                             </div>
                         </div>
