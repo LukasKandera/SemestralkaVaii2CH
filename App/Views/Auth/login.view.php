@@ -25,6 +25,7 @@ $layout = 'auth';
                             <button class="btn btn-primary" type="submit" name="submit">Prihlásiť
                             </button>
                             <a class="btn btn-success" href="?c=auth&a=register">Registrácia ak nemáte účet</a>
+                            <a class="btn btn-warning" href="?c=home">Domov</a>
                         </div>
                     </form>
                 </div>

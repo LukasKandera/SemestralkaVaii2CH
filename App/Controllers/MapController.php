@@ -114,10 +114,7 @@ class MapController extends AControllerBase
 
         return $this->json('ok');
     }
-    /**
-     * @return \App\Core\Responses\RedirectResponse
-     * @throws \Exception
-     */
+
     public function store()
     {
         $id = $this->request()->getValue('id');
@@ -130,10 +127,18 @@ class MapController extends AControllerBase
         if (!is_null($oldImage) && is_null($map->getImage())) {
             $map->setImage($oldImage);
         }
+        if ($this->request()->getValue("kategoria") == "0") {
+            return $this->html([
+                'map' => $map,
+                'messageK' => 'Vyber Kategoriu!'
+            ],
+                'map.form'
+            );
+        } else {
+            $map->save();
 
-        $map->save();
-
-        return $this->redirect("?c=map");
+            return $this->redirect("?c=map");
+        }
     }
     public function storeTextP()
     {

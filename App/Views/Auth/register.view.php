@@ -24,7 +24,7 @@ $layout = 'auth';
                         <div class="text-center">
                             <button class="btn btn-primary" type="submit" name="submit">Registrovať
                             </button>
-
+                            <a class="btn btn-warning" href="?c=home">Domov</a>
                         </div>
                     </form>
                 </div>

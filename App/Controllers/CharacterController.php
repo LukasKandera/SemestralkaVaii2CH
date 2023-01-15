@@ -85,11 +85,6 @@ class CharacterController extends AControllerBase
         return $this->json($characters);
     }
 
-    /**
-     * @return \App\Core\Responses\RedirectResponse
-     * @throws \Exception
-     */
-
     public function store()
     {
         $id = $this->request()->getValue('id');
@@ -105,16 +100,33 @@ class CharacterController extends AControllerBase
         $character->setIdealy($this->request()->getValue("idealy"));
         $character->setPovolanieCech($this->request()->getValue("povolanieCech"));
         $character->setHlas($this->request()->getValue("hlas"));
-        $character->setAutor($this->request()->getValue("autor"));
+        $character->setAutor($this->request()->getValue("autor")*1);
 
         $character->setObrazok($this->processUploadedFile($character));
         if (!is_null($oldImage) && is_null($character->getObrazok())) {
             $character->setObrazok($oldImage);
         }
 
-        $character->save();
+        if ($this->request()->getValue("rasa") == "0") {
+            return $this->html([
+                'character' => $character,
+                'messageR' => 'Vyber Rasu!'
+            ],
+                'character.form'
+            );
+        } elseif ($this->request()->getValue("typ") == "0") {
+            return $this->html([
+                'character' => $character,
+                'messageT' => 'Vyber Typ!'
+            ],
+                'character.form'
+            );
+        } else {
+            $character->save();
 
-        return $this->redirect("?c=character");
+            return $this->redirect("?c=character");
+        }
+
     }
 
     /**

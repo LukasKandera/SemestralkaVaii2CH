@@ -24,6 +24,9 @@ $predmet = $data['predmet'];
                 </div>
                 <div class="mb-3">
                     <label for="druh">Druh:</label>
+                    <div class="text-danger mb-3">
+                        <?= @$data['messageD'] ?>
+                    </div>
                     <select name="druh" id="druh">
                         <?php foreach (Druhpredmets::getAll() as $druh) { ?>
                             <option value="<?=$druh->getId()?>" <?php if($predmet->getDruh() == $druh->getId()) { ?> selected <?php } ?> > <?= $druh->getNazov() ?></option>
@@ -33,6 +36,9 @@ $predmet = $data['predmet'];
                 </div>
                 <div class="mb-3">
                     <label for="jedinecnost">Jedinečnosť:</label>
+                    <div class="text-danger mb-3">
+                        <?= @$data['messageJ'] ?>
+                    </div>
                     <select name="jedinecnost" id="jedinecnost">
                         <?php foreach (Jedinecnostpredmets::getAll() as $jedinecnost) { ?>
                             <option value="<?=$jedinecnost->getId()?>" <?php if($predmet->getJedinecnost() == $jedinecnost->getId()) { ?> selected <?php } ?> ><?= $jedinecnost->getNazov() ?></option>

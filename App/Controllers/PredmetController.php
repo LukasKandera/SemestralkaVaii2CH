@@ -82,10 +82,7 @@ class PredmetController extends AControllerBase
         return $this->json($predmets);
     }
 
-    /**
-     * @return \App\Core\Responses\RedirectResponse
-     * @throws \Exception
-     */
+
     public function store()
     {
         $id = $this->request()->getValue('id');
@@ -107,9 +104,25 @@ class PredmetController extends AControllerBase
             $predmet->setImage($oldImage);
         }
 
-        $predmet->save();
+        if ($this->request()->getValue("druh") == "0") {
+            return $this->html([
+                'predmet' => $predmet,
+                'messageD' => 'Vyber Druh!'
+            ],
+                'predmet.form'
+            );
+        } elseif ($this->request()->getValue("jedinecnost") == "0") {
+            return $this->html([
+                'predmet' => $predmet,
+                'messageJ' => 'Vyber Jedinecnost!'
+            ],
+                'predmet.form'
+            );
+        } else {
+            $predmet->save();
 
-        return $this->redirect("?c=predmet");
+            return $this->redirect("?c=predmet");
+        }
     }
 
     /**

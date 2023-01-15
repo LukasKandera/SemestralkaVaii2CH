@@ -21,7 +21,10 @@ $map = $data['map'];
                     <label for="nazov" class="form-label">Názov:</label>
                     <input type="text" class="form-control" id="nazov" name="nazov" aria-describedby="nazov" value="<?= $map->getNazov() ?>" required>
                 </div>
-                <label for="kategoria">Vyber filter kategórie</label>
+                <label for="kategoria">Kategória</label>
+                <div class="text-danger mb-3">
+                    <?= @$data['messageK'] ?>
+                </div>
                 <select name="kategoria" id="kategoria">
                     <?php foreach (Kategorymap::getAll() as $kat) { ?>
                         <option value="<?=$kat->getId()?>"><?= $kat->getNazovKategorie() ?></option>

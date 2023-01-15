@@ -28,6 +28,9 @@ $character = $data['character'];
                 </div>
                 <div class="mb-3">
                     <label for="rasa">Národ:</label>
+                    <div class="text-danger mb-3">
+                        <?= @$data['messageR'] ?>
+                    </div>
                     <select name="rasa" id="rasa">
                         <?php foreach (Rasacharacter::getAll() as $rasa) { ?>
                             <option value="<?=$rasa->getId()?>" <?php if($character->getRasa() == $rasa->getId()) { ?> selected <?php } ?> > <?= $rasa->getNazov() ?></option>
@@ -38,6 +41,9 @@ $character = $data['character'];
 
                 <div class="mb-3">
                     <label for="typ">Typ/Druh:</label>
+                    <div class="text-danger mb-3">
+                        <?= @$data['messageT'] ?>
+                    </div>
                     <select name="typ" id="typ">
                         <?php foreach (Typcharacter::getAll() as $typ) { ?>
                             <option value="<?=$typ->getId()?>" <?php if($character->getTyp() == $typ->getId()) { ?> selected <?php } ?> > <?= $typ->getNazov() ?></option>
