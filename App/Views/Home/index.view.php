@@ -8,7 +8,24 @@
 <body>
 
 <div class="row">
-
+    <div class="column side">
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo0.png" alt="...">
+        </p>
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo.png" alt="...">
+        </p>
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo3.png" alt="...">
+        </p>
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo2.png" alt="...">
+        </p>
+    </div>
     <div class="column middle">
         <img class="imgCenter" src="../../../public/img/dd1.jpg" alt="DnD uzky obr">
         <h1 class="NadpisSekcia">Na úvod čo je to D&D</h1>

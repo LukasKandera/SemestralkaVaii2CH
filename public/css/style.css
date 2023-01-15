@@ -85,6 +85,12 @@ h1.NadpisSekcia {
   font-size: 20px;
 }
 
+.textOddel {
+  color: goldenrod;
+  font-size: 20px;
+  border-bottom: 3px solid goldenrod;
+}
+
 div.citacia {
   font-style: italic;
   padding: 10px;

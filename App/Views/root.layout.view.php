@@ -35,7 +35,7 @@
             <a class="btn btn-dark btn-lg btn-block" href="?c=character">Postavy</a>
             <a class="btn btn-dark btn-lg btn-block" href="?c=map">Mapy</a>
             <?php if ($auth->isLogged()) { ?>
-            <a class="btn btn-dark btn-lg btn-block" href="?c=map">Príbehy</a>
+            <a class="btn btn-dark btn-lg btn-block" href="?c=kategory">Kategórie</a>
             <?php } ?>
         </div>
         <?php if ($auth->isLogged()) { ?>

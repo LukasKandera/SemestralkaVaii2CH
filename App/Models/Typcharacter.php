@@ -40,4 +40,5 @@ class Typcharacter extends Model
     {
         $this->nazov = $nazov;
     }
+
 }

@@ -43,6 +43,17 @@ class DBAuthenticator implements IAuthenticator
         }
     }
 
+    function kontLogin($login) : bool
+    {
+        $foundUser = User::getAll("login = ?", [$login]);
+
+        if (count($foundUser) >= 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Logout the user
      */

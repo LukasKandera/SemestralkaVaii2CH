@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Config\Configuration;
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
+use App\Models\User;
 
 /**
  * Class AuthController
@@ -30,7 +31,7 @@ class AuthController extends AControllerBase
     {
         $formData = $this->app->getRequest()->getPost();
         $logged = null;
-        $heslo = password_hash("123", PASSWORD_DEFAULT);
+
         if (isset($formData['submit'])) {
             $logged = $this->app->getAuth()->login($formData['login'], $formData['password']);
             if ($logged) {
@@ -50,5 +51,34 @@ class AuthController extends AControllerBase
     {
         $this->app->getAuth()->logout();
         return $this->html();
+    }
+
+    public function register(): Response
+    {
+        return $this->html([
+            'user' => new User()
+        ],
+            'register'
+        );
+    }
+    public function storeUser()
+    {
+        $id = $this->request()->getValue('id');
+        $user = ($id ? User::getOne($id) : new User());
+        $user->setLogin($this->request()->getValue("login"));
+        $heslo = password_hash($this->request()->getValue("password"), PASSWORD_DEFAULT);
+        $user->setPassword($heslo);
+        if ($this->app->getAuth()->kontLogin($this->request()->getValue("login")) === false) {
+            $user->save();
+            return $this->redirect("?c=home");
+        } else {
+            return $this->html([
+                'user' => new User(),
+                'message' => 'Zlý login tento login uz existuje!'
+            ],
+                'register'
+            );
+        }
+
     }
 }

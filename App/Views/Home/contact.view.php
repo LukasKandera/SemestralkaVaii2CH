@@ -1,22 +1,32 @@
 <?php /** @var Array $data */ ?>
 
 <div class="row">
-    <div class="col">
-        <h3>Fakulta riadenia a informatiky</h3>
-        <strong>Adresa</strong>: Univerzitná 8215/1, 010 26 Žilina<br>
-        <strong>Tel. číslo</strong>: +421/41 513 4121<br>
-
-        <strong>GPS</strong>: 49°12'6,4"N 18°45'42,6"E
+    <div class="column side">
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo0.png" alt="...">
+        </p>
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo.png" alt="...">
+        </p>
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo3.png" alt="...">
+        </p>
+        <p></p>
+        <p>
+            <img class="imgCenter" src="../../../public/img/logo2.png" alt="...">
+        </p>
     </div>
-</div>
-<div class="row mt-3">
-    <div class="col">
-        <iframe width="100%" height="300"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=18.747396469116214%2C49.193792384417996%2C18.776578903198246%2C49.210336337994846&amp;layer=mapnik&amp;marker=49.202065053033984%2C18.761987686157227"></iframe>
-    </div>
-</div>
-<div class="row mt-3">
-    <div class="col">
-        <a href="?c=home">Späť na hlavnú stránku</a>
+    <div class="column middle">
+        <h1 class="NadpisSekcia">Kontaktné maily</h1>
+        <h1 class="NadpisThema">V prípade otázok, dotazov alebo požiadaviek ma neváhajte kontaktovať</h1>
+        <p>
+            kandera5@fri.uniza.sk
+        </p>
+        <p>
+            lukas.kandera@gmail.com
+        </p>
     </div>
 </div>
