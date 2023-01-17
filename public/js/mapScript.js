@@ -48,7 +48,7 @@ class Map {
         }
     }
 
-    // pošle novú správu na server
+
     async addText() {
         try {
 
@@ -63,7 +63,6 @@ class Map {
                     parent: document.getElementById("newParent").value
                 })
             });
-            // nakoniec vymaže správu a adresáta
             document.getElementById("newNazov").value = "";
             document.getElementById("newText").value = "";
 
