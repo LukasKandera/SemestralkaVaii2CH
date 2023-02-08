@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="../../public/css/styl.css">
     <link rel="stylesheet" href="../../public/css/style.css">
     <script src="../../public/js/script.js"></script>
-
+    <script src="../../public/js/mapScript.js"></script>
+    <script src="../../public/js/filerChars.js"></script>
+    <script src="../../public/js/filterItems.js"></script>
 </head>
 <body>
 <div class="headermain row" id="HM">

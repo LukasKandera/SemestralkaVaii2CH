@@ -1,6 +1,5 @@
 class Map {
     constructor() {
-        document.getElementById("zobraz").onclick = () => this.texty();
         document.getElementById("addMapText").onclick = () => this.addText();
 
         this.reloadData();

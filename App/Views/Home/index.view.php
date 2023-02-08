@@ -1,11 +1,3 @@
-<head>
-    <meta charset="utf-8">
-    <title>Archív na D&D</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../public/css/style.css">
-    <script src="../../../public/js/script.js"></script>
-</head>
-<body>
 
 <div class="row">
     <div class="column side">
@@ -51,5 +43,3 @@
 
     </div>
 </div>
-
-</body>

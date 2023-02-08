@@ -7,18 +7,11 @@ use App\Core\IAuthenticator;
 use App\Models\Map;
 use App\Models\Kategorymap;
 ?>
-<head>
-    <meta charset="UTF-8">
-    <title>Mapy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../public/css/style.css">
-</head>
-<body>
 <div class="row">
     <div class="column side">
         <?php foreach ($data['data'] as $map) { ?>
             <p></p>
-            <a type="button" href="#<?=$map->getId()?>" class="btn btn-dark btn-lg row"><?=$map->getNazov()?></a>
+            <a role="button" href="#<?=$map->getId()?>" class="btn btn-dark btn-lg row"><?=$map->getNazov()?></a>
         <?php } ?>
     </div>
     <div class="column middle">
@@ -43,10 +36,10 @@ use App\Models\Kategorymap;
                                 <?php if ($map->getImage()) { ?>
                                     <img src="<?= $map->getImage() ?>" class="card-img-top" alt="...">
                                 <?php } else {?>
-                                    <img src="<?= "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "itemDef.png" ?>" class="card-img-top" alt="...">
+                                    <img src="<?= "public/img/itemDef.png" ?>" class="card-img-top" alt="...">
                                 <?php } ?>
                                 <p></p>
-                                <p align="center">
+                                <p>
                                     <a href="?c=map&a=open&id=<?= $map->getId() ?>" class="btn btn-success">Otvoriť</a>
                                     <?php if ($auth->isLogged()) { ?>
                                         <?php if ($map->getAutor() == $auth->getLoggedUserId()) { ?>
@@ -66,5 +59,3 @@ use App\Models\Kategorymap;
 
     </div>
 </div>
-
-</body>

@@ -8,7 +8,7 @@ use App\Models\Jedinecnostpredmets;
 
 
 /** @var Jedinecnostpredmets $kat */
-$kat = $data['druh'];
+$kat = $data['jed'];
 ?>
 <div class="container">
     <div class="row>">

@@ -10,22 +10,11 @@ use App\Models\Jedinecnostpredmets;
 use App\Models\Predmet;
 
 ?>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Predmety</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../public/css/style.css">
-    <script src="../../../public/js/filterItems.js"></script>
-</head>
-<body>
-
-
 <div class="row">
     <div class="column side">
         <?php foreach ($data['data'] as $predmet) { ?>
             <p></p>
-            <a type="button" href="#<?=$predmet->getId()?>" class="btn btn-dark btn-lg row"><?=$predmet->getNadpis()?></a>
+            <a role="button" href="#<?=$predmet->getId()?>" class="btn btn-dark btn-lg row"><?=$predmet->getNadpis()?></a>
         <?php } ?>
     </div>
     <div class="column middle">
@@ -119,4 +108,3 @@ use App\Models\Predmet;
     </div>
 </div>
 
-</body>

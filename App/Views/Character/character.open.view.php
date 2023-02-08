@@ -11,14 +11,6 @@ use App\Models\Typcharacter;
 $character = $data['character'];
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Nehráčske postavy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../public/css/style.css">
-</head>
-<body>
-
 <div class="row">
     <div class="column side">
         <p></p>
@@ -82,6 +74,4 @@ $character = $data['character'];
 
 
 </div>
-
-</body>
-
+</div>

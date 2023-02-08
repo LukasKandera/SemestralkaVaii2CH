@@ -17,7 +17,7 @@ $predmet = $data['predmet'];
             <form action="?c=predmet&a=store" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="<?= $predmet->getId() ?>" name="id">
                 <label for="autor" class="form-label" hidden></label>
-                <input type="hidden" value="<?= $auth->getLoggedUserId() ?>" id="autor" name="autor">
+                <input hidden value="<?= $auth->getLoggedUserId() ?>" id="autor" name="autor">
                 <div class="mb-3">
                     <label for="nadpis" class="form-label">Názov:</label>
                     <input type="text" class="form-control" id="nadpis" name="nadpis" aria-describedby="nadpis" value="<?= $predmet->getNadpis() ?>" required>

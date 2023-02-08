@@ -134,7 +134,7 @@ class PredmetController extends AControllerBase
         $image = $this->request()->getFiles()["image"];
         if (!is_null($image) && $image['error'] == UPLOAD_ERR_OK) {
             $name = time() . $image["name"];
-            $targetFile = "public" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . $name;
+            $targetFile = "public/img/" . $name;
             if (move_uploaded_file($image["tmp_name"], $targetFile)) {
                 if ($predmet->getId() && $predmet->getImage()) {
                     unlink($predmet->getImage());

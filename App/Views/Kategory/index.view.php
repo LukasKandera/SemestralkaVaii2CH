@@ -10,15 +10,6 @@ use App\Models\Rasacharacter;
 use App\Models\Typcharacter;
 
 ?>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Nehráčske postavy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../public/css/style.css">
-    <script src="../../../public/js/filerChars.js"></script>
-</head>
-<body>
 <div class="row">
     <div class="column side">
         <p></p>
@@ -134,5 +125,4 @@ use App\Models\Typcharacter;
 
     </div>
 </div>
-
-</body>
+</div>

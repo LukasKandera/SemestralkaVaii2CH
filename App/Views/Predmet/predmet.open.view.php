@@ -10,13 +10,6 @@ use App\Core\IAuthenticator;
 $predmet = $data['predmet'];
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Predmety</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../public/css/style.css">
-</head>
-<body>
 <div class="row">
     <div class="column side">
         <p></p>
@@ -69,4 +62,4 @@ $predmet = $data['predmet'];
     </div>
 </div>
 
-</body>
+
